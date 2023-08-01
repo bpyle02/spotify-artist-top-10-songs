@@ -52,6 +52,7 @@ def get_songs_by_artist(token, artist_id):
     json_result = json.loads(result.content)["tracks"]
     return json_result
 
+#Gets the authentication token
 token = get_token()
 
 artist = input("Type an artist name to get their top 10 songs: ")
@@ -64,5 +65,5 @@ for idx, song in enumerate(songs):
     minutes = int(song['duration_ms'] / 60000)
     seconds = int(((song['duration_ms'] / 60000) - minutes) * 60)
     if (song['explicit']):
-        print(f"{idx + 1}. {song['name']} [E] | Length: {minutes}:{seconds} Rating: {song['popularity']}")
-    print(f"{idx + 1}. {song['name']} | Length: {minutes}:{seconds} Rating: {song['popularity']}")
+        print(f"{idx + 1}. {song['name']} [E] | Duration: {minutes}:{seconds} Rating: {song['popularity']}")
+    print(f"{idx + 1}. {song['name']} | Duration: {minutes}:{seconds} Rating: {song['popularity']}")
