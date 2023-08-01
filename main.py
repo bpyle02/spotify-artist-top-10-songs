@@ -42,7 +42,7 @@ def search_for_artist(token, artist_name):
     if len(json_result) == 0:
         print("No artist with this name exists")
         return None
-
+    
     return json_result[0]
 
 def get_songs_by_artist(token, artist_id):
